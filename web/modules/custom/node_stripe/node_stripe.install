@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the node_stripe_example module.
+ *
+ * This file contains the functions required to perform install and
+ * uninstall operations.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * @ingroup node_stripe
+ */
+function node_stripe_schema() {
+  $schema['node_stripe'] = [
+    'description' => 'Stores some values for sorting fun.',
+    'fields' => [
+      'id' => array(
+        'description' => 'The primary key to store unique information.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The primary identifier for a user.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'nid' => array(
+        'description' => 'Storing the node id.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'card_number' => array(
+        'description' => 'Storing the card number.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'card_exp_month' => array(
+        'description' => 'Storing the card exp month.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'card_exp_year' => array(
+        'description' => 'Storing the card exp year.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'amount' => array(
+        'description' => 'Storing the amount.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'txn_id' => array(
+        'description' => 'Storing the txn_id.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'payment_status' => array(
+        'description' => 'Storing the payment_status.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'subscription_date' => array(
+          'description' => 'Subscription date time(yyyy-mm-dd H:i:s).',
+          'type' => 'varchar',
+          'mysql_type' => 'DATETIME',
+          'not null' => TRUE,
+      ),
+      'currency' => array(
+        'description' => 'Storing the currency.',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

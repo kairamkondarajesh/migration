@@ -1,0 +1,8 @@
+name: Node subscription moulde
+description: Node subscription module with stripe payment.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

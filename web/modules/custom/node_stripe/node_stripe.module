@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * Code for the node stripe module.
+ */
+/**
+ * Implements hook_preprocess_node().
+ */
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function node_stripe_entity_view_mode_alter(&$view_mode, Drupal\Core\Entity\EntityInterface $entity, $context) {
+
+    // Change the view mode to teaser on full page view for node ID 123.
+    if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'courses' && $view_mode == 'full') {
+        //$entity->id()
+/*         echo "<pre>";
+        print_r($entity->getType());
+        exit; */
+      //$view_mode = 'course_teaser';
+    }
+  }
+
+function node_stripe_preprocess_node(&$variables) {
+    //echo "<pre>";
+    //kint($variables['content']);
+    //echo $variables['content']['field_course_enable'][0]['#context']['value'];
+    //exit;
+    $variables['view_mode'] = 'course_teaser';
+    /* $type = $variables['node']->getType();
+    if ($type == 'courses') {
+      $variables['content']['body'][0]['#context']['value'] = '123';
+      //$variables['content']['field_location_fax'][0]['#context']['value'] = formatPhone($variables['content']['field_location_fax'][0]['#context']['value']);
+      $variables['content']->setValue(['value' => $body, 'format' => $format]);
+    } */
+}
+?>

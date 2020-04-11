@@ -1,0 +1,9 @@
+paymentform:
+  version: 1.x
+  header: true  
+  js:
+    'https://js.stripe.com/v2/': { external: true }
+    'js/stripe.js': { scope: footer, weight: -1 }
+  dependencies:
+    - core/jquery
+
