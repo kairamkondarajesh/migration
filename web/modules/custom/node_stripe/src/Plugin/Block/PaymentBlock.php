@@ -18,15 +18,15 @@ use Drupal\Core\Form\FormInterface;
  *   category = @Translation("Custom payment block")
  * )
  */
-class PaymentBlock extends BlockBase {
+class PaymentBlock extends BlockBase
+{
 
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
-
-    $form = \Drupal::formBuilder()->getForm('Drupal\node_stripe\Form\paymentForm');
-
-    return $form;
-   }
+    /**
+     * {@inheritdoc}
+     */
+    public function build()
+    {
+        $form = \Drupal::formBuilder()->getForm('Drupal\node_stripe\Form\paymentForm');
+        return $form;
+    }
 }

@@ -1,0 +1,4 @@
+services:
+  stripe_payment:
+    class: Drupal\node_stripe\StripePayment
+    arguments: ['@logger.factory']
