@@ -18,15 +18,17 @@ use Drupal\Core\Form\FormInterface;
  *   category = @Translation("Custom article block example")
  * )
  */
-class ArticleBlock extends BlockBase {
+class ArticleBlock extends BlockBase
+{
 
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
+    /**
+     * {@inheritdoc}
+     */
+    public function build()
+    {
 
-    $form = \Drupal::formBuilder()->getForm('Drupal\resume\Form\WorkForm');
+        $form = \Drupal::formBuilder()->getForm('Drupal\resume\Form\WorkForm');
 
-    return $form;
-   }
+        return $form;
+    }
 }
